@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Motivasi.AI — Dapatkan Motivasi Hari Ini</title>
 
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
@@ -19,21 +18,23 @@
       <label>Ceritakan situasimu atau ketik kata kunci:</label>
       <textarea id="prompt" placeholder="Misal: saya kurang percaya diri saat presentasi..."></textarea>
 
-      <div class="actions">
-        <select id="tone">
-          <option value="inspirational">Inspiratif</option>
-          <option value="calm">Tenang</option>
-          <option value="energetic">Semangat / Energetik</option>
-          <option value="short">Singkat & Tegas</option>
-        </select>
-        <button id="generateBtn">Dapatkan Motivasi</button>
+      <div class="tone-actions">
+        <label>Pilih gaya motivasi:</label>
+        <div class="tone-options">
+          <button data-tone="inspirational" class="tone-btn active">Inspiratif</button>
+          <button data-tone="calm" class="tone-btn">Tenang</button>
+          <button data-tone="energetic" class="tone-btn">Semangat</button>
+          <button data-tone="short" class="tone-btn">Singkat</button>
+        </div>
       </div>
+
+      <button id="generateBtn" class="generate-btn">Dapatkan Motivasi</button>
     </section>
 
     <section id="resultCard" class="card result-card hidden">
       <h2>Motivasimu</h2>
       <p id="resultText"></p>
-      <div class="actions">
+      <div class="result-actions">
         <button id="saveBtn">Simpan</button>
         <button id="copyBtn">Salin</button>
       </div>

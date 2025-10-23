@@ -16,19 +16,9 @@ const firebaseConfig = {
   measurementId: "G-8T9GVNH6LH"
 };
 
-// Inisialisasi Firebase App dan Database
 const app = initializeApp(firebaseConfig);
-export const db = getDatabase(app);
+const db = getDatabase(app);
 
-// Fungsi helper global agar mudah dipakai di app.js
-window.firebaseDB = {
-  ref,
-  push,
-  set,
-  onValue,
-  get,
-  child,
-  db
-};
-
+// Named exports
+export { db, ref, push, set, onValue, get, child };
 console.log("✅ Firebase v12.4.0 initialized");

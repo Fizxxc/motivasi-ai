@@ -1,4 +1,4 @@
-/* Global */
+/* ===== Global ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +12,6 @@ body {
   color: #fff;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   padding: 2rem;
 }
 
@@ -21,7 +20,7 @@ body {
   max-width: 720px;
 }
 
-/* Header */
+/* ===== Header ===== */
 .header {
   display: flex;
   justify-content: space-between;
@@ -39,7 +38,7 @@ body {
   opacity: 0.7;
 }
 
-/* Card */
+/* ===== Card ===== */
 .card {
   background: rgba(255,255,255,0.05);
   padding: 1.5rem;
@@ -48,7 +47,7 @@ body {
   box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
-/* Input Card */
+/* ===== Input Card ===== */
 .input-card label {
   display: block;
   font-size: 0.9rem;
@@ -66,31 +65,57 @@ body {
   font-size: 1rem;
   resize: none;
   outline: none;
+  margin-bottom: 1rem;
 }
 
 .input-card textarea::placeholder {
   color: rgba(255,255,255,0.5);
 }
 
-.input-card .actions {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+/* ===== Tone Selection ===== */
+.tone-actions {
+  margin-bottom: 1rem;
 }
 
-.input-card select {
+.tone-actions label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.tone-options {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tone-btn {
   padding: 0.5rem 1rem;
   border-radius: 1rem;
+  background: rgba(255,255,255,0.1);
   border: 1px solid rgba(255,255,255,0.2);
-  background: rgba(255,255,255,0.08);
-  color: #fff;
-  font-size: 0.9rem;
   cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
 }
 
-.input-card button {
-  margin-left: auto;
-  padding: 0.6rem 1.5rem;
+.tone-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.tone-btn.active {
+  background: #fff;
+  color: #7f00ff;
+  border-color: #fff;
+  font-weight: 600;
+}
+
+/* ===== Generate Button ===== */
+.generate-btn {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.8rem;
   border-radius: 1rem;
   background: #fff;
   color: #7f00ff;
@@ -100,12 +125,12 @@ body {
   transition: all 0.2s ease;
 }
 
-.input-card button:hover {
+.generate-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Result Card */
+/* ===== Result Card ===== */
 .result-card h2 {
   font-size: 1.2rem;
   font-weight: 700;
@@ -114,15 +139,15 @@ body {
 
 .result-card p {
   line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
-.result-card .actions {
+.result-actions {
   display: flex;
   gap: 1rem;
-  margin-top: 1rem;
 }
 
-.result-card button {
+.result-actions button {
   padding: 0.5rem 1.2rem;
   border-radius: 1rem;
   border: 1px solid rgba(255,255,255,0.2);
@@ -133,12 +158,12 @@ body {
   transition: all 0.2s ease;
 }
 
-.result-card button:hover {
+.result-actions button:hover {
   background: rgba(255,255,255,0.2);
   transform: translateY(-1px);
 }
 
-/* History Card */
+/* ===== History Card ===== */
 .history-card h3 {
   font-weight: 700;
   margin-bottom: 0.8rem;
@@ -172,7 +197,7 @@ body {
   background: rgba(255,255,255,0.2);
 }
 
-/* Footer */
+/* ===== Footer ===== */
 footer {
   text-align: center;
   font-size: 0.8rem;
@@ -180,7 +205,7 @@ footer {
   margin-top: 2rem;
 }
 
-/* Utility */
+/* ===== Utilities ===== */
 .hidden {
   display: none;
 }
