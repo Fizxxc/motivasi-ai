@@ -5,62 +5,53 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Motivasi.AI — Dapatkan Motivasi Hari Ini</title>
 
-  <!-- Tailwind CDN (for quick prototyping) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- custom style -->
-  <link rel="stylesheet" href="/style.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./style.css" />
 </head>
-<body class="bg-gradient-to-b from-indigo-900 via-purple-800 to-pink-700 min-h-screen text-white font-sans">
-  <main class="max-w-3xl mx-auto p-6">
-    <header class="flex items-center justify-between mb-6">
-      <h1 class="text-3xl font-extrabold">Motivasi.AI</h1>
-      <small class="text-sm opacity-80">Powered by AI &amp; Firebase</small>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Motivasi.AI</h1>
+      <small>Powered by AI &amp; Firebase</small>
     </header>
 
-    <section class="bg-white/5 p-6 rounded-2xl shadow-lg mb-6">
-      <label class="block mb-2 text-sm opacity-80">Ceritakan situasimu atau ketik kata kunci:</label>
-      <textarea id="prompt" rows="3" class="w-full p-3 rounded-lg bg-white/6 placeholder:text-white/60 border border-white/10 focus:outline-none" placeholder="Misal: saya kurang percaya diri saat presentasi..."></textarea>
+    <section class="card input-card">
+      <label>Ceritakan situasimu atau ketik kata kunci:</label>
+      <textarea id="prompt" placeholder="Misal: saya kurang percaya diri saat presentasi..."></textarea>
 
-      <div class="flex gap-3 mt-4">
-        <select id="tone" class="p-2 rounded-lg bg-white/6 border border-white/10">
+      <div class="actions">
+        <select id="tone">
           <option value="inspirational">Inspiratif</option>
           <option value="calm">Tenang</option>
           <option value="energetic">Semangat / Energetik</option>
           <option value="short">Singkat & Tegas</option>
         </select>
-
-        <button id="generateBtn" class="ml-auto px-5 py-2 rounded-lg bg-white text-purple-800 font-semibold hover:shadow-xl transition">Dapatkan Motivasi</button>
+        <button id="generateBtn">Dapatkan Motivasi</button>
       </div>
     </section>
 
-    <section id="resultCard" class="hidden bg-white/6 p-6 rounded-2xl mb-6">
-      <div class="flex items-start gap-4">
-        <div class="flex-1">
-          <h2 class="text-lg font-bold mb-2">Motivasimu</h2>
-          <p id="resultText" class="leading-relaxed"></p>
-        </div>
-      </div>
-
-      <div class="mt-4 flex gap-3">
-        <button id="saveBtn" class="px-4 py-2 rounded-lg bg-white/10 border border-white/20">Simpan</button>
-        <button id="copyBtn" class="px-4 py-2 rounded-lg bg-white text-purple-800 font-semibold">Salin</button>
+    <section id="resultCard" class="card result-card hidden">
+      <h2>Motivasimu</h2>
+      <p id="resultText"></p>
+      <div class="actions">
+        <button id="saveBtn">Simpan</button>
+        <button id="copyBtn">Salin</button>
       </div>
     </section>
 
-    <section class="bg-white/5 p-6 rounded-2xl">
-      <h3 class="font-bold mb-3">Riwayat</h3>
-      <div id="historyList" class="space-y-3">
-        <p class="opacity-80 text-sm">Belum ada riwayat — buat motivasi pertama kamu!</p>
+    <section class="card history-card">
+      <h3>Riwayat</h3>
+      <div id="historyList">
+        <p class="placeholder">Belum ada riwayat — buat motivasi pertama kamu!</p>
       </div>
     </section>
 
-    <footer class="mt-8 text-center text-xs opacity-80">
+    <footer>
       <p>Tip: isi prompt dengan detail untuk hasil lebih personal.</p>
     </footer>
   </main>
 
-  <script src="/firebase.js"></script>
-  <script src="/app.js"></script>
+  <script type="module" src="./firebase.js"></script>
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
