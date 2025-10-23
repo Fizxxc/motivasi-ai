@@ -163,38 +163,74 @@ body {
   transform: translateY(-1px);
 }
 
-/* ===== History Card ===== */
+/* ===== History Card (UPDATE) ===== */
+.history-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1.2rem;
+  padding: 1rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 12px rgba(128, 0, 255, 0.15);
+  color: #fff;
+  max-width: 100%;
+  overflow: hidden;
+}
+
 .history-card h3 {
   font-weight: 700;
   margin-bottom: 0.8rem;
+  color: #ffffff;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 .history-card .placeholder {
   opacity: 0.7;
   font-size: 0.9rem;
+  text-align: center;
+  padding: 0.5rem 0;
 }
 
+/* Isi daftar transaksi */
 .history-card div > div {
   display: flex;
   justify-content: space-between;
   align-items: start;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   padding: 0.8rem;
   border-radius: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  gap: 0.5rem;
 }
 
+/* Agar teks tetap di dalam box */
+.history-card div > div p,
+.history-card div > div span {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 70%;
+  line-height: 1.4;
+}
+
+/* Tombol di dalam history card */
 .history-card div button {
   font-size: 0.75rem;
-  padding: 0.3rem 0.6rem;
+  padding: 0.35rem 0.7rem;
   border-radius: 0.8rem;
-  background: rgba(255,255,255,0.1);
+  background: linear-gradient(135deg, rgba(150, 80, 255, 0.3), rgba(90, 50, 150, 0.5));
   border: none;
   cursor: pointer;
+  color: #fff;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .history-card div button:hover {
-  background: rgba(255,255,255,0.2);
+  background: linear-gradient(135deg, rgba(180, 100, 255, 0.5), rgba(120, 60, 200, 0.6));
+  transform: scale(1.03);
 }
 
 /* ===== Footer ===== */
@@ -208,4 +244,51 @@ footer {
 /* ===== Utilities ===== */
 .hidden {
   display: none;
+}
+
+/* ======================================= */
+/* GAYA PENENGAHAN             */
+/* ======================================= */
+#tombol-container {
+  text-align: center; /* Ini yang membuat tombol di tengah (karena tombol adalah elemen inline) */
+  margin-top: 50px; /* Jarak dari atas (opsional) */
+}
+
+/* ======================================= */
+/* GAYA TOMBOL SAWERIA         */
+/* ======================================= */
+.saweria-button {
+  /* Warna & Bentuk Dasar */
+  background-color: #38c172; /* Hijau Khas Saweria */
+  color: #ffffff; /* Teks Putih */
+  padding: 12px 24px; /* Ruang dalam tombol */
+  border-radius: 8px; /* Sudut membulat */
+  font-family: sans-serif; /* Font umum */
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none; /* Menghilangkan garis bawah tautan */
+  display: inline-block; /* Penting untuk agar text-align: center bekerja pada container */
+  
+  /* Bayangan/Efek 3D ringan (opsional) */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  /* Transisi halus untuk hover (opsional) */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.saweria-button:hover {
+  /* Efek saat kursor di atas tombol */
+  background-color: #2fb367; /* Hijau sedikit lebih gelap */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.saweria-button span {
+  /* Mengatur ikon/emoji */
+  margin-right: 8px;
+}
+
+h6 {
+  color: #ffffff; /* Warna teks putih */
+  margin-bottom: 10px; /* Jarak antara teks dan tombol */
+  font-size: 20px; /* Ukuran font */
 }
